@@ -28,22 +28,18 @@ export default {
     },
     methods: {
         addTodo () {
-            // check if this.newTodoText is set (prevent adding of empty items)
             if (this.newTodoText) {
-                // this.todos.push() adds a new entry to the back of a list
-                // a todo item consists of the text and an id, and we will simply use the current time for the id
+                
                 this.todos.push({
                     text: this.newTodoText,
                     id: Date.now()
                 })
-                // after addind the todo item, clear the text
+                
                 this.newTodoText = ''
             }
         },
         removeTodo (item) {
-            // the function gets a todo item as an argument
-            // this.todos.filter() filters out all occurences of this item from the list this.todos
-            // we simply re-assign the filtered list of todos to list.todos
+            
             this.todos = this.todos.filter(_item => _item !== item)
         }
     }
